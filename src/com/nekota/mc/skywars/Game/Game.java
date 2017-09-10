@@ -45,7 +45,7 @@ public class Game {
 	}
 	
 	public String toString() {
-		return new String("Game{name='" + roomName + "',state=" + gameState + ",player=" + player + "}");
+		return new String("Game{name='" + roomName + "',state=" + gameState + ",player=" + playerCount + "}");
 	}
 	
 	public void shutdown() {
