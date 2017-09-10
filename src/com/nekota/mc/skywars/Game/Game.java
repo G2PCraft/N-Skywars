@@ -1,16 +1,15 @@
-package com.nekota.mc.skywars;
+package com.nekota.mc.skywars.Game;
 
 public class Game {
 	private String roomName;
-	private int player;
+	private int playerCount;
 	private int minPlayer;
 	private int maxPlayer;
 	private GameState gameState;
 
-
 	public Game(String roomName,int minPlayer, int maxPlayer) {
 		this.roomName = roomName;
-		this.player = 0;
+		this.playerCount = 0;
 		this.minPlayer = minPlayer;
 		this.maxPlayer = maxPlayer;
 		this.gameState = GameState.WAITING;
@@ -18,7 +17,7 @@ public class Game {
 	
 	// only for test purpose. delete it when release.
 	public void setPlayerNum(int num) {
-		this.player = num;
+		this.playerCount = num;
 	}
 	
 	public void setState(GameState state) {
@@ -29,8 +28,8 @@ public class Game {
 		return roomName;
 	}
 	
-	public int getPlayerNum() {
-		return player;
+	public int getPlayerCount() {
+		return playerCount;
 	}
 	
 	public int getMinPlayerValue() {

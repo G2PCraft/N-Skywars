@@ -1,4 +1,4 @@
-package com.nekota.mc.skywars;
+package com.nekota.mc.skywars.Game;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -56,7 +56,7 @@ public class GameManager {
 		Collections.sort(availableGames, new Comparator<Game>() {
 			@Override
 			public int compare(Game o1, Game o2) {
-				return (o1.getPlayerNum() - o2.getPlayerNum());
+				return (o1.getPlayerCount() - o2.getPlayerCount());
 			}
 		});
 		Collections.reverse(availableGames);

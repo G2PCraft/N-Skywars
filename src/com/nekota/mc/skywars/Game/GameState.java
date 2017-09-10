@@ -1,4 +1,4 @@
-package com.nekota.mc.skywars;
+package com.nekota.mc.skywars.Game;
 
 public enum GameState {
 	WAITING,

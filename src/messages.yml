@@ -1,0 +1,31 @@
+command.only_for_playes: '&cThis command is only available for players.'
+command.usage.full: |
+  &aNSkywars base commands:
+  &e/ns map create <name> &rCreate a map, which is used by games.
+  &e/ns map delete <name> &rDelete a map. This operation cannot be undo.
+  &e/ns map edit <name> &rEnter editing mode.
+  &e/ns map quitedit &rQuit editing mode.
+  &e/ns map switch <name> &rSwitch to another map to edit.
+  &e/ns map edit &rGet further information about editing mode.
+command.edit.enter: '&aYou are now editing &e%%map%%'
+command.edit.leave: '&aYou left the editing mode. All changes were saved.'
+command.edit.help: |
+  &aEditing mode commands:
+  &e/ns map setborder &rSet border of the map by 2 points you selected.
+  &e/ns map setchestgroup <island|center> &rSet chests you selected as one group.
+  &e/ns map setname <name> &rSet the name of the map.
+  &e/ns map setmode <solo|double|mega> &rSet the game mode of the map.
+  &e/ns map setchestmode <normal|insane> &rSet the chest's mode of the map.
+  &e/ns map setwaiting &rSet the waiting region, which will be removed automatically
+    after the game starts. Only available for Double and Mega mode.
+  &e/ns map overview &rView map's overview.
+command.map.notfound: '&cMap &e%%map%% &cnot found.'
+command.map.create: |
+   &aCreated map &e%%map%%.
+   &ePlease note that the world is exclusive to the map.
+   &eWe highly suggest you to create a new world for another map.
+command.map.delete-confirm: |
+  &cYou really want to delete the map? All changes cannot be undo.
+  &cIf you do this, all games depend on this map will not be able to run.
+  &cDo &e/map confirm-delete &cto continue.
+command.map.delete: '&aDeleted map &e%%map%%'

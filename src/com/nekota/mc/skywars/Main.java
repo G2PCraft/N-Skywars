@@ -3,8 +3,12 @@ package com.nekota.mc.skywars;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.nekota.mc.skywars.Exception.SkywarsException;
+import com.nekota.mc.skywars.Game.Game;
+import com.nekota.mc.skywars.Game.GameManager;
 
 public class Main extends JavaPlugin{
+	
+	
 	// For testing purposes.
 	public static void main(String args[]) {
 		try {

@@ -1,0 +1,10 @@
+name: N-Skywars
+main: com.nekota.mc.skywars.Main
+author: Unity41
+version: 1.0.0
+commands:
+    nskywars:
+        aliases: [ns]
+        description: Basic commands of N-Skywars
+        permission: nskywars.basic
+        usage: /ns <sub-command>
