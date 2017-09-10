@@ -8,6 +8,13 @@ import com.nekota.mc.skywars.Game.GameManager;
 
 public class Main extends JavaPlugin{
 	
+	public void onEnable() {
+		this.getLogger().info("NSkywars is now enabled.");
+	}
+	
+	public void onDisable() {
+		this.getLogger().info("NSkywars is now disabled.");
+	}
 	
 	// For testing purposes.
 	public static void main(String args[]) {
