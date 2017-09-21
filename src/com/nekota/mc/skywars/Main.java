@@ -13,6 +13,8 @@ public class Main extends JavaPlugin{
 	private static MessageCenter messageCenter;
 	private ResourceChecker resourceChecker;
 	
+	final static String version = "1.0.0-SNAPSHOT";
+	
 	public void onEnable() {
 		this.resourceChecker = new ResourceChecker(this);
 		this.resourceChecker.checkAndReleaseFromJar();
@@ -28,6 +30,10 @@ public class Main extends JavaPlugin{
 	
 	public static MessageCenter getMessageCenter() {
 		return messageCenter;
+	}
+	
+	public static String getVersionString() {
+		return version;
 	}
 	
 	// For testing purposes.
