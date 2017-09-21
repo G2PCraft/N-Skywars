@@ -18,7 +18,7 @@ public class CommandHandler implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String str, String[] args) {
 		if (!(sender instanceof Player)) {
-			main.getMessageCenter().send(sender, "command.only_for_players");
+			Main.getMessageCenter().send(sender, "command.only_for_players");
 			return true;
 		}
 		switch(args.length) {

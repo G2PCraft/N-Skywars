@@ -10,14 +10,14 @@ import com.nekota.mc.skywars.Util.MessageCenter;
 import com.nekota.mc.skywars.Util.ResourceChecker;
 
 public class Main extends JavaPlugin{
-	private MessageCenter messageCenter;
+	private static MessageCenter messageCenter;
 	private ResourceChecker resourceChecker;
 	
 	public void onEnable() {
 		this.resourceChecker = new ResourceChecker(this);
 		this.resourceChecker.checkAndReleaseFromJar();
 		
-		this.messageCenter = new MessageCenter(this);
+		Main.messageCenter = new MessageCenter(this);
 		this.getCommand("ns").setExecutor(new CommandHandler(this));
 		this.getLogger().info("NSkywars is now enabled.");
 	}
@@ -26,8 +26,8 @@ public class Main extends JavaPlugin{
 		this.getLogger().info("NSkywars is now disabled.");
 	}
 	
-	public MessageCenter getMessageCenter() {
-		return this.messageCenter;
+	public static MessageCenter getMessageCenter() {
+		return messageCenter;
 	}
 	
 	// For testing purposes.
