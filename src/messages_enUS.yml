@@ -8,6 +8,8 @@ command.usage.full: |
   &e/ns map quitedit &rQuit editing mode.
   &e/ns map switch <name> &rSwitch to another map to edit.
   &e/ns map edit &rGet further information about editing mode.
+  &e/ms help &rShow the help contents.
+  &e/ns version &rGet the version of the plugin.
 command.edit.enter: '&aYou are now editing &e%%map%%'
 command.edit.leave: '&aYou left the editing mode. All changes were saved.'
 command.edit.help: |
