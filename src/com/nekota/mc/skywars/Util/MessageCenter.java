@@ -19,8 +19,8 @@ public class MessageCenter {
 	public MessageCenter(Main main) {
 		try {
 			this.main = main;
-
-			File messageFile = new File(main.getDataFolder(), "messages.yml");
+			// to be removed in future releases
+			File messageFile = new File(main.getDataFolder(), "messages\\messages_enUS.yml");
 			this.messageConfig = new YamlConfiguration();
 			this.messageConfig.load(messageFile);
 		} catch (IOException | InvalidConfigurationException e) {

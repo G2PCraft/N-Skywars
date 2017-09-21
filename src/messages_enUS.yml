@@ -1,4 +1,4 @@
-messages.locale: en-US
+messages.locale: en_US
 command.only_for_playes: '&cThis command is only available for players.'
 command.usage.full: |
   &aNSkywars base commands:
