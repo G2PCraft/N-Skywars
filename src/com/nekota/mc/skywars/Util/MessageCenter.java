@@ -13,6 +13,8 @@ import org.bukkit.entity.Player;
 
 import com.nekota.mc.skywars.Main;
 
+import net.md_5.bungee.api.ChatColor;
+
 public class MessageCenter {
 	private Main main;
 	private FileConfiguration messageConfig;
@@ -38,6 +40,7 @@ public class MessageCenter {
 			message = message.replaceAll(variables.group(), arguments[i]);
 			i++;
 		}
+		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
 	}
 
 	public String getPlayerLocale(Player player) {
@@ -55,5 +58,6 @@ public class MessageCenter {
 	public void send(Player player, String messagePath) {
 		this.send((CommandSender) player, messagePath, "");
 	}
+
 
 }

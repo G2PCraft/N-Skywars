@@ -2,6 +2,7 @@ package com.nekota.mc.skywars;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.nekota.mc.skywars.Command.CommandHandler;
 import com.nekota.mc.skywars.Exception.SkywarsException;
 import com.nekota.mc.skywars.Game.Game;
 import com.nekota.mc.skywars.Game.GameManager;
@@ -17,6 +18,7 @@ public class Main extends JavaPlugin{
 		this.resourceChecker.checkAndReleaseFromJar();
 		
 		this.messageCenter = new MessageCenter(this);
+		this.getCommand("ns").setExecutor(new CommandHandler(this));
 		this.getLogger().info("NSkywars is now enabled.");
 	}
 	
