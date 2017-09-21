@@ -24,6 +24,10 @@ public class Main extends JavaPlugin{
 		this.getLogger().info("NSkywars is now disabled.");
 	}
 	
+	public MessageCenter getMessageCenter() {
+		return this.messageCenter;
+	}
+	
 	// For testing purposes.
 	public static void main(String args[]) {
 		try {
