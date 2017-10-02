@@ -17,30 +17,24 @@ import net.md_5.bungee.api.ChatColor;
 
 public class MessageCenter {
 	private Main main;
-	private FileConfiguration messageConfig;
+	private MessageFile enUSMessage;
 
 	public MessageCenter(Main main) {
-		try {
-			this.main = main;
-			// to be removed in future releases
-			File messageFile = new File(main.getDataFolder(), "messages\\messages_enUS.yml");
-			this.messageConfig = new YamlConfiguration();
-			this.messageConfig.load(messageFile);
-		} catch (IOException | InvalidConfigurationException e) {
-			e.printStackTrace();
-		}
+		this.main = main;
+		this.enUSMessage = new MessageFile(main, "messages_enUS.yml");
+		// to be removed in future releases
 	}
 
 	public void send(CommandSender sender, String messagePath, String... arguments) {
 		int i = 0;
-		String message = messageConfig.getString(messagePath);
+		String message = enUSMessage.getString(messagePath);
 		Pattern regex = Pattern.compile("%%.*?%%");
 		Matcher variables = regex.matcher(message);
 		while (variables.find()) {
 			message = message.replaceAll(variables.group(), arguments[i]);
 			i++;
 		}
-		sender.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+		sender.sendMessage(message);
 	}
 
 	public String getPlayerLocale(Player player) {

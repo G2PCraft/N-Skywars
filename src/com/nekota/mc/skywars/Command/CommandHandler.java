@@ -1,7 +1,5 @@
 package com.nekota.mc.skywars.Command;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -9,8 +7,8 @@ import org.bukkit.entity.Player;
 
 import com.nekota.mc.skywars.Main;
 import com.nekota.mc.skywars.Command.Commands.CommandHelp;
+import com.nekota.mc.skywars.Command.Commands.CommandMap;
 import com.nekota.mc.skywars.Command.Commands.CommandVersion;
-import com.nekota.mc.skywars.Map.Region;
 
 public class CommandHandler implements CommandExecutor {
 	private Main main;
@@ -29,13 +27,13 @@ public class CommandHandler implements CommandExecutor {
 		case 0:
 			CommandVersion.handle(sender);
 			break;
-		case 1:
+		default:
 			switch (args[0]) {
 			case "help":
 				CommandHelp.helpBase(sender);
 				break;
 			case "map":
-				
+				CommandMap.handle(sender, args);
 				break;
 			case "version":
 				CommandVersion.handle(sender);

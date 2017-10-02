@@ -8,6 +8,7 @@ command.usage.full: |
   &e/ns map quitedit &rQuit editing mode.
   &e/ns map switch <name> &rSwitch to another map to edit.
   &e/ns map edit &rGet further information about editing mode.
+  &e/ns map itemset &rGet further information about Chest's Item Set.
   &e/ms help &rShow the help contents.
   &e/ns version &rGet the version of the plugin.
 command.edit.enter: '&aYou are now editing &e%%map%%'
@@ -15,10 +16,10 @@ command.edit.leave: '&aYou left the editing mode. All changes were saved.'
 command.edit.help: |
   &aEditing mode commands:
   &e/ns map setborder &rSet border of the map by 2 points you selected.
-  &e/ns map setchestgroup <island|center> &rSet chests you selected as one group.
+  &e/ns map setchestgroup <itemset> &rSet chests you selected as one group.
   &e/ns map setname <name> &rSet the name of the map.
-  &e/ns map setmode <solo|double|mega> &rSet the game mode of the map.
-  &e/ns map setchestmode <normal|insane> &rSet the chest's mode of the map.
+  &e/ns map setperteam <number> &rSet how many players each team.
+  &e/ns map setcenter &rSet the center block. Players will look at it when the game starts.
   &e/ns map setwaiting &rSet the waiting region, which will be removed automatically
     after the game starts. Only available for Double and Mega mode.
   &e/ns map overview &rView map's overview.
