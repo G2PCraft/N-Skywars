@@ -36,6 +36,14 @@ public class Region {
 		return "Region{" + l1.toString() + "," + l2.toString() + "}";
 	}
 	
+	public Location getLocation1() {
+		return this.l1;
+	}
+	
+	public Location getLocation2() {
+		return this.l2;
+	}
+	
 	public boolean isInRegion(Location loc) {
 		if (loc.getBlockX() >= l1.getBlockX() && loc.getBlockX() <= l2.getBlockX()) {
 			if (loc.getBlockY() >= l1.getBlockY() && loc.getBlockY() <= l2.getBlockY()) {

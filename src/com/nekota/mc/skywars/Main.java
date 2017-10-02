@@ -1,14 +1,11 @@
 package com.nekota.mc.skywars;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import com.nekota.mc.skywars.Command.CommandHandler;
 import com.nekota.mc.skywars.Exception.SkywarsException;
 import com.nekota.mc.skywars.Game.Game;
 import com.nekota.mc.skywars.Game.GameManager;
-import com.nekota.mc.skywars.Map.Region;
 import com.nekota.mc.skywars.Util.MessageCenter;
 import com.nekota.mc.skywars.Util.ResourceChecker;
 

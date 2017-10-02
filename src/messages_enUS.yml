@@ -20,6 +20,7 @@ command.edit.help: |
   &e/ns map setname <name> &rSet the name of the map.
   &e/ns map setperteam <number> &rSet how many players each team.
   &e/ns map setcenter &rSet the center block. Players will look at it when the game starts.
+  &e/ns map setspawn <id> &rSet the spawn point for an id (a number, e.g. 'setspawn 1').
   &e/ns map setwaiting &rSet the waiting region, which will be removed automatically
     after the game starts. Only available for Double and Mega mode.
   &e/ns map overview &rView map's overview.
