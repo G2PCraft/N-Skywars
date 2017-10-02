@@ -13,16 +13,18 @@ import net.md_5.bungee.api.ChatColor;
 
 public class MessageFile {
 	private FileConfiguration messageConfig;
+
 	public MessageFile(Main main, String fileName) {
 		try {
-			File messageFile = new File(main.getDataFolder(), "messages\\" + fileName);
+			File messageFile = new File(main.getDataFolder(),
+					Global.FOLDER_NAME_MESSAGES + "\\" + fileName);
 			this.messageConfig = new YamlConfiguration();
 			this.messageConfig.load(messageFile);
 		} catch (IOException | InvalidConfigurationException e) {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public String getString(String key) {
 		return ChatColor.translateAlternateColorCodes('&', this.messageConfig.getString(key));
 	}

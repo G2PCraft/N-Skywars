@@ -5,21 +5,25 @@ import java.io.IOException;
 
 import com.nekota.mc.skywars.Main;
 import com.nekota.mc.skywars.Exception.SkywarsException;
+import com.nekota.mc.skywars.Util.Global;
 
 public class MapManager {
-	private Main main;
+	private static Main main;
+
 	public MapManager(Main main) {
-		this.main = main;
+		MapManager.main = main;
 	}
-	public void createNewMap(String name) throws SkywarsException, IOException {
-		// 瞎写的。。脑子好用的时候再回来看。
-		
-		File mapFile = new File(main.getDataFolder(), "maps\\" + name + ".yml");
-		if (mapFile.exists()) {
+
+	public static void createNewMap(String name) throws SkywarsException, IOException {
+		if (isMapExist(name)) {
 			throw new SkywarsException("Map name already used");
 		} else {
-			mapFile.createNewFile();
+			new File(main.getDataFolder(), Global.FOLDER_NAME_MAPS + "\\" + name + ".yml").createNewFile();
 		}
 	}
-	
+
+	public static boolean isMapExist(String name) {
+		return new File(main.getDataFolder(), Global.FOLDER_NAME_MAPS + "\\" + name + ".yml").exists();
+	}
+
 }

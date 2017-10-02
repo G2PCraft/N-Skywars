@@ -1,4 +1,5 @@
 messages.locale: en_US
+command.wrong_usage: '&cWrong usage. Do &e/ns help &cfor details.'
 command.only_for_players: '&cThis command is only available for players.'
 command.usage.full: |
   &aNSkywars base commands:
@@ -24,7 +25,9 @@ command.edit.help: |
   &e/ns map setwaiting &rSet the waiting region, which will be removed automatically
     after the game starts. Only available for Double and Mega mode.
   &e/ns map overview &rView map's overview.
+command.map.exists: '&cMap &e%%map%% &calready exists, please use another name.'
 command.map.notfound: '&cMap &e%%map%% &cnot found.'
+command.map.create-fail: '&cFailed to create a map: &rMay caused by IOException. &cCheck your console!'
 command.map.create: |
    &aCreated map &e%%map%%.
    &ePlease note that the world is exclusive to the map.

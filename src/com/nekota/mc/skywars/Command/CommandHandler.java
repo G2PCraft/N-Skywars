@@ -5,22 +5,17 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.nekota.mc.skywars.Main;
 import com.nekota.mc.skywars.Command.Commands.CommandHelp;
 import com.nekota.mc.skywars.Command.Commands.CommandMap;
 import com.nekota.mc.skywars.Command.Commands.CommandVersion;
+import com.nekota.mc.skywars.Util.MessageCenter;
 
 public class CommandHandler implements CommandExecutor {
-	private Main main;
-
-	public CommandHandler(Main main) {
-		this.main = main;
-	}
 
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String str, String[] args) {
 		if (!(sender instanceof Player)) {
-			Main.getMessageCenter().send(sender, "command.only_for_players");
+			MessageCenter.send(sender, "command.only_for_players");
 			return true;
 		}
 		switch (args.length) {

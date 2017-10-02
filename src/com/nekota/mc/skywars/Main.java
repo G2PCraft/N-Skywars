@@ -6,34 +6,28 @@ import com.nekota.mc.skywars.Command.CommandHandler;
 import com.nekota.mc.skywars.Exception.SkywarsException;
 import com.nekota.mc.skywars.Game.Game;
 import com.nekota.mc.skywars.Game.GameManager;
-import com.nekota.mc.skywars.Util.MessageCenter;
 import com.nekota.mc.skywars.Util.ResourceChecker;
 
 public class Main extends JavaPlugin{
-	private static MessageCenter messageCenter;
 	private ResourceChecker resourceChecker;
 	
-	final static String version = "1.0.0-SNAPSHOT";
+	public static Main instance;
 	
 	public void onEnable() {
+		instance = this;
 		this.resourceChecker = new ResourceChecker(this);
 		this.resourceChecker.checkAndReleaseFromJar();
-		
-		Main.messageCenter = new MessageCenter(this);
-		this.getCommand("ns").setExecutor(new CommandHandler(this));
+		this.getCommand("ns").setExecutor(new CommandHandler());
 		this.getLogger().info("NSkywars is now enabled.");
 	}
 	
 	public void onDisable() {
 		this.getLogger().info("NSkywars is now disabled.");
 	}
-	
-	public static MessageCenter getMessageCenter() {
-		return messageCenter;
-	}
-	
-	public static String getVersionString() {
-		return version;
+
+	// This method is only made for static classes accessing the main instance
+	public static Main getInstance() {
+		return instance;
 	}
 	
 	// For testing purposes.

@@ -13,7 +13,6 @@ import com.nekota.mc.skywars.Main;
 public class ResourceChecker {
 	private Main main;
 	private List<String> MESSAGE_FILE_NAME_LIST;
-	private final String MESSAGE_FILE_FOLDER_NAME = "messages";
 	private List<String> MESSAGE_FOLDER_NAME_LIST;
 	public ResourceChecker(Main main) {
 		this.main = main;
@@ -28,11 +27,11 @@ public class ResourceChecker {
 
 	public void checkAndReleaseFromJar() {
 		try {
-			this.main.getLogger().info("Checking resource files...");
+			this.main.getLogger().info("> Checking resource files...");
 			this.checkFolder();
 			this.checkConfigFile();
 			this.checkMessageFile();
-			this.main.getLogger().info("Checked all resources");
+			this.main.getLogger().info("> Checked all resources");
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -52,7 +51,7 @@ public class ResourceChecker {
 	private void checkMessageFile() throws IOException {
 		int releasedCount = 0;
 		for (String fileName : MESSAGE_FILE_NAME_LIST) {
-			File messageFile = new File(this.main.getDataFolder(), MESSAGE_FILE_FOLDER_NAME + "\\" + fileName);
+			File messageFile = new File(this.main.getDataFolder(), Global.FOLDER_NAME_MESSAGES + "\\" + fileName);
 			if (messageFile.exists()) {
 				return;
 			} else {
@@ -63,7 +62,7 @@ public class ResourceChecker {
 			releasedCount++;
 		}
 		this.main.getLogger()
-				.info("Detected lacked file. Released " + releasedCount + " message file(s) to plugin folder");
+				.info("[Res] Detected lacked file. Released " + releasedCount + " message file(s) to plugin folder");
 	}
 	
 	private void checkConfigFile() throws IOException {
